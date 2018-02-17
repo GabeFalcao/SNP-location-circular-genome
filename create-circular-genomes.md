@@ -80,6 +80,28 @@ circos.initializeWithIdeogram()
 circos.clear()
 ```
 
+Testing with random data before I make my final figure
+
+
+```r
+circos.par("start.degree" = 90)
+circos.par("gap.degree" = rep(c(2, 4), 12))
+circos.initializeWithIdeogram()
+
+bed = generateRandomBed(nr = 20, nc = 0)
+circos.genomicPosTransformLines(bed, posTransform = posTransform.default, horizontalLine = "top", track.height = 0.1)
+
+circos.genomicTrackPlotRegion(bed, ylim = c(0, 1), panel.fun = function(region, value, ...) {
+    circos.genomicText(region, value, y = 1, adj = c(0, 0.5), labels = "gene", facing = "reverse.clockwise", niceFacing = TRUE,
+        posTransform = posTransform.default)
+}, bg.border = NA)
+```
+
+![](create-circular-genomes_files/figure-html/randon-data-graph-1.png)<!-- -->
+
+```r
+circos.clear()
+```
 
 
 

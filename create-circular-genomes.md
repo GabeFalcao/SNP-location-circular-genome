@@ -63,7 +63,6 @@ Things that I want to change:
 * Space between the chromosomes;  
 * Start on chromosome 1;  
 * Add points to correct places;  
-* #Any other alterations will be added here with info  
 
 Start altering the location and space
 
@@ -103,6 +102,7 @@ circos.genomicTrackPlotRegion(bed, ylim = c(0, 1), panel.fun = function(region, 
 circos.clear()
 ```
 
-
-
+Next things that I want to alter:  
+1. Can I remove the "size" of the chromosome from the plot?  
+2. Should I make each chromosome a solid color?
 

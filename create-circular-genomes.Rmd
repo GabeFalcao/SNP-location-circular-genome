@@ -141,3 +141,8 @@ circos.genomicTrackPlotRegion(up.2017, ylim = c(0, 1), panel.fun = function(regi
 
 circos.clear()
 ```
+
+Using individual SNPs get too convoluted. So, for the graph let's just use the leading SNP, that way we will have the 161 loci.
+
+
+

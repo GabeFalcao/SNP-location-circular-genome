@@ -1,0 +1,46 @@
+---
+title: "Circular Genome View"
+author: "Gabriel Falcao Alencar"
+date: "February, 2018"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load the necessary packages
+```{r packages}
+library(circlize)
+```
+
+Next step, we will generate a plain graph to see what we need to alter.
+
+```{r first}
+circos.initializeWithIdeogram()
+text(0, 0, "default", cex = 1)
+circos.info()
+circos.clear()
+```
+
+Things that I want to change:  
+* Space between the chromosomes;  
+* Start on chromosome 1;  
+* Add points to correct places;  
+* #Any other alterations will be added here with info  
+
+Start altering the location and space
+
+```{r local-space}
+circos.par("start.degree" = 90)
+circos.par("gap.degree" = rep(c(2, 4), 12))
+circos.initializeWithIdeogram()
+circos.clear()
+```
+
+
+
+
+

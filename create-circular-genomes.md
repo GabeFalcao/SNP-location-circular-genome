@@ -225,3 +225,27 @@ circos.genomicTrackPlotRegion(up.2017, ylim = c(0, 1), panel.fun = function(regi
 ```r
 circos.clear()
 ```
+
+Using individual SNPs get too convoluted. So, for the graph let's just use the leading SNP, that way we will have the 161 loci.
+
+
+```r
+circos.par("start.degree" = 90)
+circos.par("gap.degree" = rep(c(2, 4), 12))
+circos.initializeWithIdeogram()
+
+loci.regions <- read.csv("create-circular-genomes_files/SNP-data/loci-regions.csv", header=TRUE)
+circos.genomicPosTransformLines(loci.regions, posTransform = posTransform.default, horizontalLine = "top", track.height = 0.1)
+
+circos.genomicTrackPlotRegion(loci.regions, ylim = c(0, 1), panel.fun = function(region, value, ...) {
+    circos.genomicText(region, value, y = 1, adj = c(0, 0.5), labels = "loci", facing = "reverse.clockwise", niceFacing = TRUE,
+        posTransform = posTransform.default)
+}, bg.border = NA)
+```
+
+![](create-circular-genomes_files/figure-html/loci-1.png)<!-- -->
+
+```r
+circos.clear()
+```
+
